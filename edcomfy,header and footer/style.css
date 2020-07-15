@@ -1,0 +1,266 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+ul{
+  list-style: none;
+}
+
+nav.navbar.navbar-light{
+  position: relative;
+}
+
+nav::after{
+  content: '';
+  position: absolute;
+  bottom:0 ;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  border: none;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+nav .navbar-brand{
+  font-size:24px;
+  font-weight: 500;
+}
+
+nav .navbar-brand span{
+ color: #0075FF;
+}
+
+nav .navbar-nav button {
+  background: #0075FF;
+  box-shadow: 0px 5px 10px rgba(0, 117, 255, 0.1);
+  border-radius: 5px;
+}
+  
+
+.dummy{
+  width: 100%;
+  height: 100vh;
+}
+
+footer{
+  width: 100%;
+  height: 100%;
+  background: #2C2E40;
+  color: #fff;
+}
+
+
+.footer-container{
+  display: grid;
+  width: 85%;
+  margin: 0rem auto;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(20px 30px) min-content min-content;
+  grid-template-areas: 
+    'title   title   product     about     links'
+    'contact  contact  product  about  links'
+    'socials socials   product  about   links' ; 
+    grid-gap: 5%;
+}
+
+.heading{
+  grid-area: title;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.contact{
+  grid-area: contact;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.socials{
+  grid-area: socials;
+}
+
+.socials ul{
+  display: flex;
+}
+
+.socials ul li{
+ font-size: 23px;
+ padding: .5rem .5rem .5rem 0;
+}
+
+
+
+.socials ul li a{
+  color: aliceblue;
+}
+
+.socials ul li a:hover{
+  color:#0075FF;
+}
+
+.product{
+  grid-area: product;
+}
+
+.product h1{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.product a{
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.about{
+  grid-area: about;
+}
+
+.about h1{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.about a{
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.links{
+  grid-area: links;
+}
+
+.links h1{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.links a{
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.footer-container::after{
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left:0;
+  width: 90%;
+  height: 1px;
+  background: #fff;
+}
+
+.copyright{
+  display: grid;
+  width: 85%;
+  margin: 0rem auto;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 
+    'copy  copy copy    privacy terms';
+}
+
+.copy{
+  grid-area: copy;
+}
+
+.privacy{
+  grid-area: privacy;
+}
+
+.terms{
+  grid-area: terms;
+}
+
+.copyright a{
+  color: aliceblue;
+}
+
+@media  (max-width:992px){
+  .footer-container{
+    width: 90%;
+  }
+  .footer-container::after{
+    width: 95%;
+  }
+  .copyright{
+    width: 90%;
+  }
+}
+
+@media (max-width:768px){
+  .footer-container{
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: minmax(20px 30px) min-content min-content min-content min-content;
+    grid-template-areas: 
+      'title   title   product'
+      'contact  contact  product'
+      'socials socials   product '
+      'about    about     links'
+      'about    about     links'; 
+      grid-gap: 2%;
+  }
+  .footer-container::after{
+    width: 95%;
+    bottom: 0;
+  }
+  .copyright{
+    display: grid;
+    width: 92%;
+    margin: 1rem auto 0;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+      'copy  copy copy   copy'
+      'terms terms privacy privacy';
+    grid-gap: 5%;
+  }
+}
+
+@media (max-width:576px){
+  .contact{
+    font-size: 1rem;
+  }
+
+  .socials ul li{
+    font-size: 18px;
+    padding: .5rem .5rem .5rem 0;
+   }
+
+   .product h1{
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .product a{
+    font-size: .8rem;
+  }
+  .about h1{
+    font-size: 1.2rem;
+  }
+  
+  .about a{
+    font-size: .8rem;
+  }
+ 
+  .links h1{
+    font-size: 1.2rem;
+  }
+  
+  .links a{
+    font-size: .8rem;
+  }
+  
+  .copyright p,
+  .copyright a{
+    font-size: .9rem;
+  }
+}
