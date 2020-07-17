@@ -220,9 +220,9 @@ footer{
     margin: 1rem auto 0;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: 
-      'copy  copy copy   copy'
-      'terms terms privacy privacy';
-    grid-gap: 5%;
+      'copy  copy copy copy  copy'
+      'terms terms terms privacy privacy';
+    grid-gap: 3%;
   }
 }
 
